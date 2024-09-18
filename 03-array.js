@@ -2,6 +2,7 @@
 
 let nombres = ["Ale", "Ulises", "Braian", "Javi", "Fabricio", "Hernan"];
 
+
 console.log(nombres.length)
 
 console.log(nombres[3])

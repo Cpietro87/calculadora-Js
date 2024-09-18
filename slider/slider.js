@@ -29,6 +29,52 @@ const datos = [
     },
   ];
 
+  //Seleccinar elementos
+  const img = document.getElementById('person-img');
+  const autor = document.getElementById('author');
+  const job = document.getElementById('job');
+  const info = document.getElementById('info');
+
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  let currentItem = 0;
+
+  //Carga el item inicial
+  window.addEventListener('DOMContentLoaded', function(){
+    showPerson(currentItem)
+  });
+
+  // Mostrar la Persona basada en el indice
+  function showPerson(person) {
+    const item = datos[person];
+    img.src = item.img;
+    autor.textContent = item.name;
+    job.textContent = item.job;
+    info.textContent = item.text;
+  };
+
+  //Mostrar la siguiente persona
+
+  nextBtn.addEventListener('click', function() {
+    currentItem ++;
+    if (currentItem > datos.length -1){
+      currentItem = 0;
+    }
+    showPerson(currentItem);
+  })
   
+  //Mostrar la imagen anterior
+  prevBtn.addEventListener('click', function() {
+    currentItem --;
+    if (currentItem < 0){
+      currentItem = datos.length -1;
+    }
+    showPerson(currentItem);
+  })
+
+
+  
+
   
   
